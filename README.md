@@ -40,3 +40,31 @@ the state in the context object .
 
 
 - Each separate use of LanguageContext Provider creates a new, separate 'pipe' of information!
+
+
+
+### using consumer component in the context system
+
+//Button.js
+```js
+import React from 'react';
+import LanguageContexts from '../contexts/LanguageContexts';
+
+class Button extends React.Component{
+
+     
+
+    render(){
+         
+        return (
+            <button className="ui button primary">
+            <LanguageContext.Consumer>
+            {(value) => value === 'english'?'submit':'voorleggen'}
+            </LanguageContext.Consumer>
+            </button>
+            )
+    }
+}
+
+export default Button;
+```
